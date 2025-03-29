@@ -149,4 +149,6 @@ For this dataset, SVM offers the best overall accuracy, though it's computationa
 
 Using scoring='f1' in GridSearchCV allowed us to select hyperparameters that optimize the model’s ability to detect meaningful positive outcomes.
 
+## Conclusion
+In this project, I developed and compared several machine learning models to predict whether clients would subscribe to a term deposit based on marketing data. Starting with a logistic regression baseline, I explored more advanced models including K-Nearest Neighbors, Decision Trees, and Support Vector Machines. To address class imbalance, I used class weighting and evaluated performance using metrics such as F1-score and recall. Through feature exploration, metric adjustment, and hyperparameter tuning, I was able to improve model performance and gain a better understanding of the predictive patterns in the dataset.
 
