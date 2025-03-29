@@ -85,7 +85,7 @@ The results are as follows:
 - Logistic Regression Accuracy: 0.6151
 - Classification Report:
               precision    recall  f1-score   support
-
+                  precision      recall      f1-score      support
            0       0.92      0.62      0.74      7308
            1       0.16      0.56      0.25       928
 
