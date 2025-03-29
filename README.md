@@ -169,6 +169,19 @@ For this dataset, SVM offers the best overall accuracy, though it's computationa
 
 Using scoring='f1' in GridSearchCV allowed us to select hyperparameters that optimize the model’s ability to detect meaningful positive outcomes.
 
+## Findings
+- The dataset was highly imbalanced, with the majority of clients not subscribing to a term deposit (~89% "no", ~11% "yes").
+- A baseline accuracy of ~88.7% was achieved by predicting the majority class
+- Logistic Regression to detect the minority class, highlighting the limitations of linear models on this dataset.
+- Support Vector Machine (SVM) achieved the highest test accuracy (~88.7%) but had the longest training time (~16 seconds).-
+- K-Nearest Neighbors (KNN) offered a great balance between speed and performance, with ~87.5% test accuracy and extremely fast training time.
+- Decision Tree models slightly overfit, showing high training accuracy (~90%) and slightly lower test accuracy (~87%)
+- Adjusting the evaluation metric to F1-score and applying hyperparameter tuning
+
+## Next Steps and Recommendations
+
+To improve model performance, I recommend trying ensemble methods like Random Forest or Gradient Boosting, and applying resampling techniques to better handle class imbalance. Further feature engineering and advanced hyperparameter tuning could also enhance results. 
+
 ## Conclusion
 In this project, I developed and compared several machine learning models to predict whether clients would subscribe to a term deposit based on marketing data. Starting with a logistic regression baseline, I explored more advanced models including K-Nearest Neighbors, Decision Trees, and Support Vector Machines. To address class imbalance, I used class weighting and evaluated performance using metrics such as F1-score and recall. Through feature exploration, metric adjustment, and hyperparameter tuning, I was able to improve model performance and gain a better understanding of the predictive patterns in the dataset.
 
