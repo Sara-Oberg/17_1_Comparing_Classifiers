@@ -83,19 +83,8 @@ baseline_accuracy = 36537 / (36537 + 4639) = 0.8873
 Logistic Regression has been used to build a basic model on the data.
 The results are as follows:
 - Logistic Regression Accuracy: 0.6151
-- Classification Report:
-              precision    recall  f1-score   support
-                  precision      recall      f1-score      support
-           0       0.92      0.62      0.74      7308
-           1       0.16      0.56      0.25       928
 
-    accuracy                           0.62      8236
-   macro avg       0.54      0.59      0.49      8236
-weighted avg       0.83      0.62      0.69      8236
-
-- Confusion Matrix:
-[[4550 2758]
- [ 412  516]]
+![image](https://github.com/user-attachments/assets/7d1a7606-8152-426e-9b27-322883313c75)
 
 ## Score the Model
 
@@ -115,3 +104,49 @@ for the following models:
 2. K-Nearest Neighbors (KNN)
 3. Decision Tree
 4. Support Vector Machine (SVM)
+
+![image](https://github.com/user-attachments/assets/f8956b5b-def6-4d1c-a335-2b4c5bbea84a)
+
+![image](https://github.com/user-attachments/assets/3fffcbe1-d472-4367-bac0-032f5e3c19f7)
+
+![image](https://github.com/user-attachments/assets/60a28989-6832-4fef-bc4e-83805cb56c20)
+
+## Analysis and Insights
+
+### Best Test Performance:
+The Support Vector Machine (SVM) still delivers the highest test accuracy (88.73%), showing strong generalization. However, it has the longest training time by far (~15.9 seconds).
+
+### Efficiency Winner:
+K-Nearest Neighbors (KNN) trains almost instantly (~0.016s) and still performs very well (87.54% test accuracy). This makes it a great choice for quick, reliable classification.
+
+### Decision Tree Observations:
+While the Decision Tree had the highest training accuracy (90.88%), its drop in test accuracy (87.04%) suggests overfitting.
+
+### Logistic Regression Underperformance:
+Despite class balancing, Logistic Regression achieved the lowest test accuracy (61.51%).
+
+### Final Recommendation:
+For this dataset, SVM offers the best overall accuracy, though it's computationally expensive. KNN is the best trade-off between performance and speed. The Decision Tree is strong but may benefit from pruning or tuning. Logistic Regression underperforms.
+
+## Improving the Model
+
+1. If a gender feature were present, we would need to carefully evaluate whether to include it. While gender might contribute predictive value, such as bias or discrimination in the model's decisions.
+2. Hyperparameter Tuning
+   - Best parameters for KNN: {'n_neighbors': 18}
+   - Best cross-validated accuracy: 0.8861566484517305
+  
+   - Best params for Decision Tree: {'max_depth': 3, 'min_samples_split': 2}
+   - Best cross-val accuracy: 0.8873102610807528
+  
+  3. Adjusting the performance metric
+     - KNN with f1 Score:
+       -- Best parameters for KNN (F1): {'n_neighbors': 3}
+       -- Best cross-validated F1 score: 0.13801727442463893
+
+     - Decision Tree with f1 Score:
+       -- Best parameters for Decision Tree (F1): {'max_depth': None, 'min_samples_split': 2}
+       -- Best cross-validated F1 score: 0.12131858062114828
+
+Using scoring='f1' in GridSearchCV allowed us to select hyperparameters that optimize the model’s ability to detect meaningful positive outcomes.
+
+
