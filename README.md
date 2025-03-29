@@ -20,7 +20,7 @@ By analyzing past campaign data and client attributes, it can be aimed to build 
 
 ## Engineering Features
 
-###To prepare the data for modeling, we have to do:
+### To prepare the data for modeling, we have to do:
 - Selecting relevant features
 - Encoding categorical variables
 - Separating features and the target column
@@ -37,7 +37,7 @@ Based on the description, the bank-related features are:
 Target:
 - y (binary: 'yes' or 'no')
 
-###Summary of Preprocessing Steps
+### Summary of Preprocessing Steps
 
 - Data Loading
 - Checked for Missing Values
@@ -56,3 +56,62 @@ Yes (1): 4639 clients
 
 ![Encoded_Class_Distribution](https://github.com/user-attachments/assets/6302a274-d20e-4ed2-9691-874eaad187b0)
 
+## Train/Test Split
+
+To evaluate our models effectively, I split the data into two sets:
+- Training set: used to train the model
+- Test set: used to evaluate the model’s performance on unseen data
+
+It was used 80% for training and 20% for testing, which is a common practice.
+- test_size=0.2: 20% of the data will go to the test set.
+- random_state=42: Ensures reproducibility
+- stratify=y: Ensures the class distribution is preserved in both training and test sets
+
+The results are:
+- Training set shape: (32940, 22) (32940,)
+- Test set shape: (8236, 22) (8236,)
+
+## A Baseline Model
+
+In a classification problem, a common baseline is the accuracy of always predicting the most frequent class.
+From earlier, we saw the class distribution in the target variable y:
+- 0 (no) -> 36537 samples
+- 1 (yes) -> 4639 samples
+baseline_accuracy = 36537 / (36537 + 4639) = 0.8873
+
+## A Simple Model
+Logistic Regression has been used to build a basic model on the data.
+The results are as follows:
+- Logistic Regression Accuracy: 0.6151
+- Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.62      0.74      7308
+           1       0.16      0.56      0.25       928
+
+    accuracy                           0.62      8236
+   macro avg       0.54      0.59      0.49      8236
+weighted avg       0.83      0.62      0.69      8236
+
+- Confusion Matrix:
+[[4550 2758]
+ [ 412  516]]
+
+## Score the Model
+
+Logistic Regression Accuracy is: 0.6151
+
+## Model Comparisons
+
+I trained and evaluated multiple models and compare the following properties:
+
+- Training time
+- Training accuracy
+- Test accuracy
+
+for the following models:
+
+1. Logistic Regression
+2. K-Nearest Neighbors (KNN)
+3. Decision Tree
+4. Support Vector Machine (SVM)
