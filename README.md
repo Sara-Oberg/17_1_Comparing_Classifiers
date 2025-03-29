@@ -13,6 +13,26 @@ Socioeconomic Context (e.g., employment variation rate, consumer confidence inde
 Target Variable (y): whether the client subscribed to a term deposit
 The dataset appears clean and well-structured, making it suitable for further preprocessing and modeling tasks.
 
+###  Visualize class balance, distributions, and relationships in the data
+
+1. Target Variable Distribution (y)
+
+   ![Target](https://github.com/user-attachments/assets/91b98d36-38ac-4331-85da-8adee169749b)
+
+2. Age Distribution
+
+   ![Age_distribution](https://github.com/user-attachments/assets/907a5ebb-89dd-4b5b-8fa8-417d1fe551ec)
+
+3. Job Distribution
+
+  ![job_distributionX](https://github.com/user-attachments/assets/b4555aa6-3300-493d-bcaa-dcab3896c112)
+
+
+4. Correlation Heatmap (for numeric features)
+
+   ![correlation_Matrix](https://github.com/user-attachments/assets/4533be71-8b7d-4407-9df9-f28767552e09)
+
+
 ## Business Objective:
 
 The primary business objective is to predict whether a client will subscribe to a term deposit based on their personal, financial, and interaction data collected during previous telemarketing campaigns.
